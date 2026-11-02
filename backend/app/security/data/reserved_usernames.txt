@@ -1,0 +1,13 @@
+# Nobody can pretend to be staff or the app.
+admin
+administrator
+mod
+moderator
+teacher
+staff
+official
+support
+system
+root
+owner
+revisionbattle

@@ -1,0 +1,41 @@
+# Blocked only as a whole "word" inside a username (split on underscores, digits and
+# CamelCase), because they appear inside innocent words: peacock, Arsenal, grape,
+# Sussex, cucumber, Dickens, raccoon, spicy, Pakistan, torpedo, Uranus, homogeneous...
+ass
+arse
+anal
+anus
+cock
+dick
+prick
+pussy
+tit
+tits
+titty
+cum
+sex
+sexy
+rape
+rapist
+pedo
+crap
+piss
+coon
+chink
+paki
+spic
+kike
+gook
+dyke
+homo
+beaner
+minge
+knob
+shag
+slag
+bugger
+nude
+nudes
+spaz
+spastic
+fag

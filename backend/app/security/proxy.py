@@ -8,6 +8,7 @@ Render URL directly, skip the proxy, or spoof their IP to dodge rate limits.
 from __future__ import annotations
 
 import hmac
+import json
 
 from fastapi import Request
 from starlette.types import ASGIApp, Receive, Scope, Send
@@ -35,13 +36,15 @@ class ProxyGuardMiddleware:
                 break
 
         if not hmac.compare_digest(supplied, self._secret):
-            await _send_json(send, 403, b'{"detail":"Forbidden"}')
+            await send_json(send, 403, "Forbidden.", "forbidden")
             return
 
         await self.app(scope, receive, send)
 
 
-async def _send_json(send: Send, status: int, body: bytes) -> None:
+async def send_json(send: Send, status: int, detail: str, code: str) -> None:
+    """Send an error in the API's standard shape from raw ASGI middleware."""
+    body = json.dumps({"detail": detail, "code": code, "field": None}).encode()
     await send(
         {
             "type": "http.response.start",

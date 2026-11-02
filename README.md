@@ -4,7 +4,7 @@ A gamified GCSE / A-level revision web app. Students revise with quick quizzes a
 
 The full design (schema, API routes, phases, privacy rules) is in [`docs/PLAN.md`](docs/PLAN.md).
 
-**Status:** Phase 1 (scaffold) is done. The app shell, database schema, health check and Cloudflare proxy work; features land phase by phase.
+**Status:** Phase 2 (accounts) is done. Students can sign up, log in, recover their account with a recovery code, fix their year group once per school year, and delete their account. Revision features land from Phase 3.
 
 ## Stack
 
@@ -128,19 +128,20 @@ Backend tests need Postgres; they use `TEST_DATABASE_URL` (default `postgresql:/
 
 ## Deploying
 
-Full step-by-step deploy instructions arrive with the first real deploy in Phase 2. The shape is:
+Step-by-step guide: [`docs/DEPLOY.md`](docs/DEPLOY.md). It covers Neon, then Render, then Cloudflare, and ends with a smoke test that checks the live site end to end.
 
-1. **Neon:** create a project in the London region (`aws-eu-west-2`) and copy the pooled and direct connection strings.
-2. **Render:** create a Blueprint from `render.yaml` and fill in the secret env vars. Migrations run automatically on start. The free tier sleeps after ~15 min idle, so the first request after that takes up to a minute.
-3. **Cloudflare:** set `BACKEND_URL` in `frontend/wrangler.jsonc` to your Render URL, then:
+## Accounts and privacy (Phase 2)
 
-```bash
-cd frontend && npx wrangler secret put PROXY_SHARED_SECRET
-```
-
-```bash
-cd frontend && npm run cf:deploy
-```
+- **Sign up:** username, password and year group (dropdown, Years 7–13). Nothing else is collected.
+- **Recovery code:** shown once at signup. It's the only way to reset a forgotten password, because there's no email.
+- **Sessions:** server-side, in an httpOnly cookie (`__Host-` and Secure in prod), lasting 30 days from last use.
+- **Rate limits:**
+  - Logins: strict per username (10 failures per 15 min), loose per IP (100 per 15 min), so one school's shared Wi-Fi can't lock everyone out.
+  - Signups: 30 per hour per IP.
+  - Recovery: 5 attempts per hour per username.
+  - IPs are only ever stored as HMACs.
+- **Usernames:** filtered for profanity (including leetspeak) and for staff-impersonating names like `admin` or `teacher`. The word lists are in `backend/app/security/data/`.
+- **Year groups:** stored as a cohort, so everyone moves up at 00:00 UK time on 1 September. Students can correct theirs once per school year.
 
 ## Topic data
 

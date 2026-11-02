@@ -1,4 +1,4 @@
-# Render Blueprint for the API. Phase 2 does the first real deploy with this.
+# Render Blueprint for the API (see docs/DEPLOY.md).
 # Secrets marked `sync: false` are entered in the Render dashboard, never committed.
 services:
   - type: web
@@ -7,7 +7,9 @@ services:
     plan: free
     region: frankfurt # closest Render region to the UK; pair with Neon's London region
     rootDir: backend
-    buildCommand: pip install uv && uv sync --frozen --no-dev
+    # UV_PYTHON_INSTALL_DIR keeps any uv-managed Python inside the project folder, which
+    # Render carries from build to runtime (the home directory isn't kept).
+    buildCommand: pip install uv && UV_PYTHON_INSTALL_DIR=.uv-python uv sync --frozen --no-dev
     # Free instances have no pre-deploy step, so migrations run on start.
     startCommand: .venv/bin/alembic upgrade head && .venv/bin/uvicorn --factory app.main:create_app --host 0.0.0.0 --port $PORT
     healthCheckPath: /api/health

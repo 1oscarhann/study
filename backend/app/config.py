@@ -41,6 +41,11 @@ class Settings(BaseSettings):
         return self.environment == "prod"
 
     @property
+    def cookie_secure(self) -> bool:
+        """Secure (HTTPS-only) cookies in prod; local dev and tests run over plain http."""
+        return self.is_prod
+
+    @property
     def migration_database_url(self) -> str:
         return self.database_url_direct or self.database_url
 

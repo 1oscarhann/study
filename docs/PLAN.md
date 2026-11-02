@@ -1,6 +1,6 @@
 # Revision Battle: Build Plan
 
-**Status:** approved 2 Nov 2026 · Phase 1 (scaffold) done
+**Status:** approved 2 Nov 2026 · Phases 1–2 done (deploy pending your Neon/Cloudflare accounts)
 
 **Decisions locked in:** Cloudflare Workers static assets (not Pages) · recovery codes · report threshold N = 3 · free `workers.dev` address for now · topic tree from the school's GCSE file (`backend/seed/gcse_topics.json`).
 
@@ -509,7 +509,7 @@ Each phase ends with a stop, a summary, and run/test steps.
 - Worker proxy + `wrangler.jsonc`.
 - CI workflow and a README skeleton.
 
-**Phase 2: accounts**
+**Phase 2: accounts** ✅ done (code). The live deploy smoke test is waiting on Neon/Cloudflare accounts; see `docs/DEPLOY.md`.
 - Signup, login, logout, recovery codes.
 - Sessions, CSRF, rate limits, profanity filter, username ideas.
 - Year group calculation, the settings correction rule, and account deletion.
