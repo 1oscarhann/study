@@ -1,0 +1,5 @@
+# Copy to frontend/.dev.vars for `npm run cf:dev` (runs the real Worker locally).
+# Values here override wrangler.jsonc "vars" in local dev. Never commit .dev.vars.
+BACKEND_URL=http://localhost:8000
+# Must match PROXY_SHARED_SECRET in backend/.env (only checked when ENVIRONMENT=prod).
+PROXY_SHARED_SECRET=dev-proxy-secret

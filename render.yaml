@@ -1,0 +1,28 @@
+# Render Blueprint for the API. Phase 2 does the first real deploy with this.
+# Secrets marked `sync: false` are entered in the Render dashboard, never committed.
+services:
+  - type: web
+    name: revision-battle-api
+    runtime: python
+    plan: free
+    region: frankfurt # closest Render region to the UK; pair with Neon's London region
+    rootDir: backend
+    buildCommand: pip install uv && uv sync --frozen --no-dev
+    # Free instances have no pre-deploy step, so migrations run on start.
+    startCommand: .venv/bin/alembic upgrade head && .venv/bin/uvicorn --factory app.main:create_app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: ENVIRONMENT
+        value: prod
+      - key: DATABASE_URL # Neon pooled connection string
+        sync: false
+      - key: DATABASE_URL_DIRECT # Neon direct connection string (migrations)
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PROXY_SHARED_SECRET # must match the Worker secret
+        sync: false
+      - key: FRONTEND_ORIGIN # e.g. https://revision-battle.<you>.workers.dev
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false

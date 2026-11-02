@@ -1,0 +1,21 @@
+# Local Postgres 16 for development and tests. Prod uses Neon.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: rb
+      POSTGRES_PASSWORD: rb
+      POSTGRES_DB: revision_battle
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./infra/postgres-init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rb -d revision_battle"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  pgdata:

@@ -1,0 +1,411 @@
+{
+  "meta": {
+    "description": "GCSE topic seed for the revision app. Boards taken from the school's public curriculum page and 2026-28 GCSE options booklet. Topic lists follow each board's published specification structure.",
+    "generated": "2026-11-02",
+    "verify": "Topic names/structure written from knowledge of each spec, not copied from the PDFs. Check each against the official spec (spec_url) before you rely on spec_ref values. Entries marked confidence: 'inferred' had the board inferred from course structure, not stated outright.",
+    "excluded": [
+      "GCSE Art & Design (AQA) and GCSE Textiles (AQA Art & Design) - 100% portfolio/practical, no examinable topic list worth quizzing",
+      "BTEC Tech Award Performing Arts (Pearson) - practical/coursework components only",
+      "ASDAN / Life Skills - not exam-assessed"
+    ]
+  },
+  "subjects": [
+    {
+      "subject": "English Language",
+      "qualification": "GCSE",
+      "board": "AQA",
+      "spec_code": "8700",
+      "spec_url": "https://www.aqa.org.uk/subjects/english/gcse/english-language-8700",
+      "confidence": "stated",
+      "topics": [
+        {"id": "eng-lang-p1", "name": "Paper 1: Explorations in Creative Reading and Writing", "subtopics": ["Q1 Identifying explicit information", "Q2 Language analysis", "Q3 Structure analysis", "Q4 Evaluating a statement", "Q5 Descriptive or narrative writing"]},
+        {"id": "eng-lang-p2", "name": "Paper 2: Writers' Viewpoints and Perspectives", "subtopics": ["Q1 True/false statements", "Q2 Summarising differences", "Q3 Language analysis (non-fiction)", "Q4 Comparing writers' perspectives", "Q5 Writing to present a viewpoint"]},
+        {"id": "eng-lang-terms", "name": "Terminology and techniques", "subtopics": ["Language devices (metaphor, simile, personification, sibilance etc.)", "Structural devices (shifts in focus, flashback, cyclical structure)", "Sentence types and punctuation for effect", "Persuasive techniques", "Spelling, punctuation and grammar"]}
+      ]
+    },
+    {
+      "subject": "English Literature",
+      "qualification": "GCSE",
+      "board": "AQA",
+      "spec_code": "8702",
+      "spec_url": "https://www.aqa.org.uk/subjects/english/gcse/english-literature-8702",
+      "confidence": "stated",
+      "notes": "School site names Frankenstein, Lord of the Flies, Blood Brothers, Pigeon English as possible texts, plus 'a Shakespeare play' and an AQA Anthology poetry cluster. Confirm which Shakespeare play and which cluster (Power and Conflict or Love and Relationships) your cohort studies, then trim the unused ones.",
+      "topics": [
+        {"id": "eng-lit-shakespeare", "name": "Shakespeare play (Paper 1 Section A)", "subtopics": ["Plot", "Characters", "Themes", "Context", "Key quotations"]},
+        {"id": "eng-lit-frankenstein", "name": "Frankenstein - Mary Shelley (Paper 1 Section B)", "subtopics": ["Plot and narrative structure", "Victor Frankenstein", "The Creature", "Walton and Elizabeth", "Themes: ambition, isolation, creation, nature", "Context: Romanticism, science, Shelley's life", "Key quotations"]},
+        {"id": "eng-lit-lotf", "name": "Lord of the Flies - William Golding (Paper 2 Section A)", "subtopics": ["Plot", "Ralph, Jack, Piggy, Simon, Roger", "Symbols: conch, glasses, beast, fire", "Themes: civilisation vs savagery, power, loss of innocence", "Context: post-WWII, Golding's views", "Key quotations"]},
+        {"id": "eng-lit-blood-brothers", "name": "Blood Brothers - Willy Russell (Paper 2 Section A)", "subtopics": ["Plot", "Mickey, Eddie, Mrs Johnstone, Mrs Lyons, Linda, the Narrator", "Themes: class, fate, superstition, nature vs nurture", "Context: 1980s Liverpool, Thatcherism", "Key quotations"]},
+        {"id": "eng-lit-pigeon-english", "name": "Pigeon English - Stephen Kelman (Paper 2 Section A)", "subtopics": ["Plot", "Harri and other characters", "Themes: innocence, violence, community, identity", "Context: inner-city London, migration", "Key quotations"]},
+        {"id": "eng-lit-poetry-anthology", "name": "AQA Poetry Anthology cluster (Paper 2 Section B)", "subtopics": ["Each anthology poem: meaning, form, language, context", "Comparing two poems"]},
+        {"id": "eng-lit-unseen", "name": "Unseen poetry (Paper 2 Section C)", "subtopics": ["Analysing an unseen poem", "Comparing two unseen poems"]}
+      ]
+    },
+    {
+      "subject": "Mathematics",
+      "qualification": "GCSE",
+      "board": "Edexcel (Higher) / AQA (Foundation)",
+      "spec_code": "Edexcel 1MA1 (Higher); AQA 8300 (Foundation)",
+      "spec_url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html",
+      "spec_url_alt": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300",
+      "confidence": "stated",
+      "notes": "Both boards cover identical DfE subject content, so one topic tree serves both. Tag Higher-only subtopics with tier='higher' in the app.",
+      "topics": [
+        {"id": "maths-number", "name": "Number", "subtopics": ["Place value, ordering and rounding", "Four operations incl. negatives and decimals", "Factors, multiples, primes, HCF and LCM", "Powers, roots and indices", "Standard form", "Fractions, decimals and percentages", "Surds (higher)", "Recurring decimals to fractions (higher)", "Bounds and error intervals"]},
+        {"id": "maths-algebra", "name": "Algebra", "subtopics": ["Notation, simplifying and substitution", "Expanding and factorising", "Solving linear equations and inequalities", "Rearranging formulae", "Sequences incl. nth term", "Straight-line graphs (y = mx + c)", "Quadratic equations and graphs", "Simultaneous equations", "Functions, inverse and composite (higher)", "Algebraic fractions and proof (higher)", "Iteration (higher)", "Transformations of graphs, gradients and area under graphs (higher)", "Equation of a circle (higher)"]},
+        {"id": "maths-ratio", "name": "Ratio, proportion and rates of change", "subtopics": ["Ratio and sharing", "Direct and inverse proportion", "Percentage change, interest and depreciation", "Compound measures (speed, density, pressure)", "Growth and decay", "Scale drawings and maps"]},
+        {"id": "maths-geometry", "name": "Geometry and measures", "subtopics": ["Angle facts and polygons", "Properties of 2D and 3D shapes", "Constructions and loci", "Perimeter, area and volume", "Circles, arcs and sectors", "Transformations", "Congruence and similarity", "Pythagoras' theorem", "Trigonometry (SOHCAHTOA)", "Sine rule, cosine rule and 1/2 ab sin C (higher)", "Circle theorems (higher)", "Vectors", "Bearings"]},
+        {"id": "maths-probability", "name": "Probability", "subtopics": ["Probability scale and basic probability", "Relative frequency", "Sample spaces and Venn diagrams", "Tree diagrams", "Independent and conditional probability"]},
+        {"id": "maths-statistics", "name": "Statistics", "subtopics": ["Sampling", "Averages and range", "Charts and diagrams", "Scatter graphs and correlation", "Cumulative frequency and box plots (higher)", "Histograms (higher)"]}
+      ]
+    },
+    {
+      "subject": "Combined Science: Trilogy",
+      "qualification": "GCSE (double award)",
+      "board": "AQA",
+      "spec_code": "8464",
+      "spec_url": "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464",
+      "confidence": "stated",
+      "notes": "Same topic numbering as the separate sciences, minus separate-only content. Reuse the biology/chemistry/physics topic ids below and tag trilogy=true.",
+      "topics": [
+        {"id": "sci-bio-cells", "name": "Biology 1: Cell biology"},
+        {"id": "sci-bio-organisation", "name": "Biology 2: Organisation"},
+        {"id": "sci-bio-infection", "name": "Biology 3: Infection and response"},
+        {"id": "sci-bio-bioenergetics", "name": "Biology 4: Bioenergetics"},
+        {"id": "sci-bio-homeostasis", "name": "Biology 5: Homeostasis and response"},
+        {"id": "sci-bio-inheritance", "name": "Biology 6: Inheritance, variation and evolution"},
+        {"id": "sci-bio-ecology", "name": "Biology 7: Ecology"},
+        {"id": "sci-chem-atomic", "name": "Chemistry 8: Atomic structure and the periodic table"},
+        {"id": "sci-chem-bonding", "name": "Chemistry 9: Bonding, structure and properties of matter"},
+        {"id": "sci-chem-quantitative", "name": "Chemistry 10: Quantitative chemistry"},
+        {"id": "sci-chem-changes", "name": "Chemistry 11: Chemical changes"},
+        {"id": "sci-chem-energy", "name": "Chemistry 12: Energy changes"},
+        {"id": "sci-chem-rates", "name": "Chemistry 13: Rate and extent of chemical change"},
+        {"id": "sci-chem-organic", "name": "Chemistry 14: Organic chemistry"},
+        {"id": "sci-chem-analysis", "name": "Chemistry 15: Chemical analysis"},
+        {"id": "sci-chem-atmosphere", "name": "Chemistry 16: Chemistry of the atmosphere"},
+        {"id": "sci-chem-resources", "name": "Chemistry 17: Using resources"},
+        {"id": "sci-phys-energy", "name": "Physics 18: Energy"},
+        {"id": "sci-phys-electricity", "name": "Physics 19: Electricity"},
+        {"id": "sci-phys-particle", "name": "Physics 20: Particle model of matter"},
+        {"id": "sci-phys-atomic", "name": "Physics 21: Atomic structure"},
+        {"id": "sci-phys-forces", "name": "Physics 22: Forces"},
+        {"id": "sci-phys-waves", "name": "Physics 23: Waves"},
+        {"id": "sci-phys-magnetism", "name": "Physics 24: Magnetism and electromagnetism"}
+      ]
+    },
+    {
+      "subject": "Biology",
+      "qualification": "GCSE (triple)",
+      "board": "AQA",
+      "spec_code": "8461",
+      "spec_url": "https://www.aqa.org.uk/subjects/science/gcse/biology-8461",
+      "confidence": "stated",
+      "topics": [
+        {"id": "sci-bio-cells", "spec_ref": "4.1", "name": "Cell biology", "subtopics": ["Cell structure (eukaryotic/prokaryotic, animal/plant)", "Microscopy and magnification", "Culturing microorganisms (triple only)", "Cell division, mitosis and stem cells", "Diffusion, osmosis and active transport"]},
+        {"id": "sci-bio-organisation", "spec_ref": "4.2", "name": "Organisation", "subtopics": ["Levels of organisation", "Digestive system and enzymes", "Heart, blood vessels and blood", "Coronary heart disease", "Health issues and non-communicable disease", "Cancer", "Plant tissues, transpiration and translocation"]},
+        {"id": "sci-bio-infection", "spec_ref": "4.3", "name": "Infection and response", "subtopics": ["Communicable diseases (viral, bacterial, fungal, protist)", "Human defence systems", "Vaccination", "Antibiotics and painkillers", "Drug discovery and development", "Monoclonal antibodies (triple only)", "Plant disease (triple only)"]},
+        {"id": "sci-bio-bioenergetics", "spec_ref": "4.4", "name": "Bioenergetics", "subtopics": ["Photosynthesis and limiting factors", "Uses of glucose", "Aerobic and anaerobic respiration", "Response to exercise", "Metabolism"]},
+        {"id": "sci-bio-homeostasis", "spec_ref": "4.5", "name": "Homeostasis and response", "subtopics": ["Homeostasis principles", "Nervous system and reflex arc", "The brain and the eye (triple only)", "Thermoregulation (triple only)", "Hormonal coordination and blood glucose", "Diabetes", "Kidneys and water balance (triple only)", "Hormones in reproduction and contraception", "Plant hormones"]},
+        {"id": "sci-bio-inheritance", "spec_ref": "4.6", "name": "Inheritance, variation and evolution", "subtopics": ["Sexual and asexual reproduction", "Meiosis", "DNA and the genome", "Protein synthesis (triple only)", "Genetic inheritance and Punnett squares", "Inherited disorders", "Sex determination", "Variation and evolution", "Selective breeding and genetic engineering", "Fossils, extinction and antibiotic resistance", "Classification"]},
+        {"id": "sci-bio-ecology", "spec_ref": "4.7", "name": "Ecology", "subtopics": ["Communities and interdependence", "Abiotic and biotic factors", "Adaptations", "Feeding relationships", "Material cycles (carbon, water)", "Decomposition (triple only)", "Biodiversity and human impact", "Global warming", "Food security (triple only)"]}
+      ]
+    },
+    {
+      "subject": "Chemistry",
+      "qualification": "GCSE (triple)",
+      "board": "AQA",
+      "spec_code": "8462",
+      "spec_url": "https://www.aqa.org.uk/subjects/science/gcse/chemistry-8462",
+      "confidence": "stated",
+      "topics": [
+        {"id": "sci-chem-atomic", "spec_ref": "4.1", "name": "Atomic structure and the periodic table", "subtopics": ["Atoms, elements and compounds", "Mixtures and separation", "Development of the atomic model", "Electronic structure", "The periodic table", "Groups 0, 1 and 7", "Transition metals (triple only)"]},
+        {"id": "sci-chem-bonding", "spec_ref": "4.2", "name": "Bonding, structure and properties of matter", "subtopics": ["Ionic bonding", "Covalent bonding", "Metallic bonding", "States of matter", "Giant covalent structures (diamond, graphite, graphene)", "Fullerenes", "Nanoparticles (triple only)"]},
+        {"id": "sci-chem-quantitative", "spec_ref": "4.3", "name": "Quantitative chemistry", "subtopics": ["Conservation of mass", "Relative formula mass", "Moles (higher)", "Limiting reactants", "Concentration of solutions", "Percentage yield and atom economy (triple only)", "Gas volumes (triple only)"]},
+        {"id": "sci-chem-changes", "spec_ref": "4.4", "name": "Chemical changes", "subtopics": ["Reactivity series", "Extraction of metals", "Oxidation and reduction", "Reactions of acids", "pH and neutralisation", "Strong and weak acids (higher)", "Electrolysis"]},
+        {"id": "sci-chem-energy", "spec_ref": "4.5", "name": "Energy changes", "subtopics": ["Exothermic and endothermic reactions", "Reaction profiles", "Bond energies (higher)", "Cells and batteries (triple only)", "Fuel cells (triple only)"]},
+        {"id": "sci-chem-rates", "spec_ref": "4.6", "name": "Rate and extent of chemical change", "subtopics": ["Calculating rates", "Factors affecting rate", "Collision theory", "Catalysts", "Reversible reactions and equilibrium", "Le Chatelier's principle (higher)"]},
+        {"id": "sci-chem-organic", "spec_ref": "4.7", "name": "Organic chemistry", "subtopics": ["Crude oil and alkanes", "Fractional distillation", "Cracking and alkenes", "Alcohols and carboxylic acids (triple only)", "Polymers (triple only)", "DNA and natural polymers (triple only)"]},
+        {"id": "sci-chem-analysis", "spec_ref": "4.8", "name": "Chemical analysis", "subtopics": ["Pure substances and formulations", "Chromatography", "Tests for gases", "Flame tests and ion identification (triple only)", "Instrumental analysis (triple only)"]},
+        {"id": "sci-chem-atmosphere", "spec_ref": "4.9", "name": "Chemistry of the atmosphere", "subtopics": ["Evolution of the atmosphere", "Greenhouse gases and climate change", "Atmospheric pollutants"]},
+        {"id": "sci-chem-resources", "spec_ref": "4.10", "name": "Using resources", "subtopics": ["Finite and renewable resources", "Potable water and waste water", "Life cycle assessment", "Corrosion and alloys (triple only)", "Ceramics, polymers and composites (triple only)", "Haber process and NPK fertilisers (triple only)"]}
+      ]
+    },
+    {
+      "subject": "Physics",
+      "qualification": "GCSE (triple)",
+      "board": "AQA",
+      "spec_code": "8463",
+      "spec_url": "https://www.aqa.org.uk/subjects/science/gcse/physics-8463",
+      "confidence": "stated",
+      "topics": [
+        {"id": "sci-phys-energy", "spec_ref": "4.1", "name": "Energy", "subtopics": ["Energy stores and transfers", "Kinetic, gravitational potential and elastic energy", "Specific heat capacity", "Power and efficiency", "Conservation and dissipation", "National and global energy resources"]},
+        {"id": "sci-phys-electricity", "spec_ref": "4.2", "name": "Electricity", "subtopics": ["Circuit symbols", "Charge, current, potential difference and resistance", "Series and parallel circuits", "I-V characteristics", "Domestic electricity and mains", "Power and energy transfer", "The National Grid", "Static electricity (triple only)"]},
+        {"id": "sci-phys-particle", "spec_ref": "4.3", "name": "Particle model of matter", "subtopics": ["Density", "Changes of state and internal energy", "Specific latent heat", "Gas pressure and temperature"]},
+        {"id": "sci-phys-atomic", "spec_ref": "4.4", "name": "Atomic structure", "subtopics": ["Atoms and isotopes", "Development of the atomic model", "Radioactive decay and nuclear radiation", "Nuclear equations", "Half-life", "Contamination and irradiation", "Uses of radiation (triple only)", "Fission and fusion (triple only)"]},
+        {"id": "sci-phys-forces", "spec_ref": "4.5", "name": "Forces", "subtopics": ["Scalars and vectors", "Weight, mass and gravity", "Resultant forces", "Work done", "Forces and elasticity", "Moments, levers and gears (triple only)", "Pressure in fluids (triple only)", "Distance, displacement, speed and velocity", "Acceleration and motion graphs", "Newton's laws", "Stopping distances", "Momentum"]},
+        {"id": "sci-phys-waves", "spec_ref": "4.6", "name": "Waves", "subtopics": ["Transverse and longitudinal waves", "Wave properties and the wave equation", "Reflection and refraction", "Sound and ultrasound (triple only)", "Seismic waves (triple only)", "Electromagnetic spectrum and uses", "Lenses and visible light (triple only)", "Black body radiation (triple only)"]},
+        {"id": "sci-phys-magnetism", "spec_ref": "4.7", "name": "Magnetism and electromagnetism", "subtopics": ["Permanent and induced magnets", "Magnetic fields", "Electromagnets", "The motor effect", "Electric motors", "Induced potential, generators and transformers (triple only)"]},
+        {"id": "sci-phys-space", "spec_ref": "4.8", "name": "Space physics (triple only)", "subtopics": ["Solar system", "Life cycle of a star", "Orbital motion", "Red-shift and the Big Bang"]}
+      ]
+    },
+    {
+      "subject": "Religious Studies",
+      "qualification": "GCSE",
+      "board": "AQA",
+      "spec_code": "8063 (Specification B)",
+      "spec_url": "https://www.aqa.org.uk/subjects/religious-studies/gcse/religious-studies-b-8063",
+      "confidence": "inferred",
+      "notes": "Booklet says AQA with Catholicism + Judaism on Paper 1 and themes on Paper 2, which matches Spec B. Themes below are the ones the booklet lists; check the exact theme names against the spec.",
+      "topics": [
+        {"id": "rs-catholic-beliefs", "name": "Catholic Christianity: beliefs and teachings", "subtopics": ["Creation", "Incarnation", "The Triune God", "Redemption", "Eschatology: life after death, judgement, heaven, hell, purgatory"]},
+        {"id": "rs-catholic-practices", "name": "Catholic Christianity: practices", "subtopics": ["Sacraments", "Mass and worship", "Prayer", "Pilgrimage", "Mission and evangelisation", "The Church in the local and worldwide community", "Popular piety"]},
+        {"id": "rs-catholic-sources", "name": "Catholic Christianity: sources of authority and forms of expression", "subtopics": ["Bible, Tradition and Magisterium", "Sacred art and architecture", "Symbolism"]},
+        {"id": "rs-judaism-beliefs", "name": "Judaism: beliefs and teachings", "subtopics": ["God as Creator, Law-Giver and Judge", "Sanctity of life and pikuach nefesh", "The Messiah", "Covenant with Abraham and the Promised Land", "Moses and the Ten Commandments", "Life after death"]},
+        {"id": "rs-judaism-practices", "name": "Judaism: practices", "subtopics": ["The synagogue", "Worship and prayer", "Shabbat", "Family life and rituals (Brit Milah, Bar/Bat Mitzvah, marriage, mourning)", "Dietary laws", "Festivals (Rosh Hashanah, Yom Kippur, Pesach)"]},
+        {"id": "rs-theme-peace-conflict", "name": "Theme: Religion, peace and conflict", "subtopics": ["Just war", "Holy war", "Pacifism", "Terrorism", "Nuclear weapons", "Peacemaking and forgiveness"]},
+        {"id": "rs-theme-crime-punishment", "name": "Theme: Religion, crime and punishment", "subtopics": ["Causes of crime", "Aims of punishment", "Forgiveness", "Death penalty", "Treatment of criminals"]},
+        {"id": "rs-theme-human-rights", "name": "Theme: Religion, human rights and social justice", "subtopics": ["Human rights and freedom of belief", "Prejudice and discrimination", "Wealth and poverty", "Exploitation of the poor"]},
+        {"id": "rs-theme-existence-god", "name": "Theme: Existence of God and revelation", "subtopics": ["Design argument", "First cause argument", "Miracles", "Evil and suffering", "Special and general revelation"]}
+      ]
+    },
+    {
+      "subject": "Spanish",
+      "qualification": "GCSE",
+      "board": "AQA",
+      "spec_code": "8692",
+      "spec_url": "https://www.aqa.org.uk/subjects/languages/gcse/spanish-8692",
+      "confidence": "stated",
+      "notes": "New AQA MFL spec (first exams 2026) uses the three themes the school lists. Same topic tree applies to French (8652) and German (8662); clone it per language. Vocab and grammar make the best quiz content.",
+      "topics": [
+        {"id": "es-identity-culture", "name": "Theme 1: People and lifestyle / Identity and culture", "subtopics": ["Identity and relationships with others", "Healthy living and lifestyle", "Education and work", "Free-time activities", "Customs, festivals and celebrations", "Celebrity culture"]},
+        {"id": "es-local-global", "name": "Theme 2: Popular culture / Local, national, international and global areas of interest", "subtopics": ["Travel and tourism, incl. places of interest", "Media and technology", "The environment and where people live"]},
+        {"id": "es-study-employment", "name": "Theme 3: Communication and the world around us / Current and future study and employment", "subtopics": ["School and studies", "Future plans and careers", "Jobs and work"]},
+        {"id": "es-grammar", "name": "Grammar", "subtopics": ["Present tense (regular, irregular, stem-changing)", "Preterite", "Imperfect", "Future and conditional", "Perfect and pluperfect (higher)", "Subjunctive (higher)", "Ser vs estar", "Reflexive verbs", "Object pronouns", "Adjective agreement and comparatives"]},
+        {"id": "es-vocab", "name": "Defined vocabulary list", "subtopics": ["Foundation vocab", "Higher vocab"]}
+      ]
+    },
+    {
+      "subject": "French",
+      "qualification": "GCSE",
+      "board": "AQA",
+      "spec_code": "8652",
+      "spec_url": "https://www.aqa.org.uk/subjects/languages/gcse/french-8652",
+      "confidence": "stated",
+      "notes": "Clone of the Spanish theme tree; swap the grammar subtopics for French grammar (passé composé, imparfait, futur, conditionnel, subjonctif etc.).",
+      "topics": []
+    },
+    {
+      "subject": "German",
+      "qualification": "GCSE",
+      "board": "AQA",
+      "spec_code": "8662",
+      "spec_url": "https://www.aqa.org.uk/subjects/languages/gcse/german-8662",
+      "confidence": "stated",
+      "notes": "Clone of the Spanish theme tree; swap the grammar subtopics for German grammar (cases, word order, perfect tense, separable verbs etc.).",
+      "topics": []
+    },
+    {
+      "subject": "History",
+      "qualification": "GCSE",
+      "board": "Edexcel",
+      "spec_code": "1HI0",
+      "spec_url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/history-2016.html",
+      "confidence": "stated",
+      "topics": [
+        {"id": "hist-migrants", "name": "Paper 1: Migrants in Britain, c800-present", "subtopics": ["c800-c1500: Vikings, Normans, medieval migrants", "c1500-c1700: Protestant refugees, Africans in Tudor England, early empire", "c1700-c1900: Irish, Jewish and Indian migration, Industrial Revolution", "c1900-present: post-war migration, Windrush, legislation, East African Asians, EU migration"]},
+        {"id": "hist-notting-hill", "name": "Paper 1: Notting Hill, c1948-c1970 (historic environment)", "subtopics": ["Caribbean settlement in Notting Hill", "Housing and Rachmanism", "1958 riots", "Kelso Cochrane", "Notting Hill Carnival", "Mangrove restaurant", "Using sources"]},
+        {"id": "hist-elizabethan", "name": "Paper 2: Early Elizabethan England, 1558-88", "subtopics": ["Queen, government and religion 1558-69", "The religious settlement", "Challenges from home and abroad 1569-88 (plots, Mary Queen of Scots, Spanish Armada)", "Elizabethan society: education, leisure, poverty", "Exploration and Drake's circumnavigation", "Virginia colony attempt"]},
+        {"id": "hist-cold-war", "name": "Paper 2: Superpower relations and the Cold War, 1941-91", "subtopics": ["Origins: Tehran, Yalta, Potsdam conferences", "Truman Doctrine and Marshall Plan", "Berlin Blockade, NATO and Warsaw Pact", "Hungarian Uprising 1956", "Berlin Crisis and the Wall", "Cuban Missile Crisis", "Prague Spring", "Détente and SALT", "Soviet invasion of Afghanistan", "Reagan, Gorbachev and the end of the Cold War"]},
+        {"id": "hist-weimar-nazi", "name": "Paper 3: Weimar and Nazi Germany, 1918-39", "subtopics": ["Origins and early problems of the Weimar Republic", "Treaty of Versailles", "Spartacist and Kapp Putsch", "1923 hyperinflation and Ruhr occupation", "Stresemann and recovery", "Rise of Hitler and the Nazi Party", "Munich Putsch", "Hitler becomes Chancellor", "Reichstag Fire and Enabling Act", "Night of the Long Knives", "Nazi control: police state, propaganda, churches", "Life in Nazi Germany: women, young people, employment, persecution of minorities", "Interpretations questions"]}
+      ]
+    },
+    {
+      "subject": "Geography",
+      "qualification": "GCSE",
+      "board": "Edexcel",
+      "spec_code": "1GA0 (Specification A)",
+      "spec_url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/geography-a-2016.html",
+      "confidence": "stated",
+      "notes": "School site mentions a Lagos vs London comparison for the cities topic, which matches the Edexcel A case studies.",
+      "topics": [
+        {"id": "geog-changing-landscapes", "name": "Paper 1: The changing landscapes of the UK", "subtopics": ["UK physical landscapes and geology", "Coastal landscapes and processes", "Coastal landforms and management", "River landscapes and processes", "River landforms and flooding", "Glaciated upland landscapes"]},
+        {"id": "geog-weather-climate", "name": "Paper 1: Weather hazards and climate change", "subtopics": ["Global atmospheric circulation", "Natural and human causes of climate change", "Tropical cyclones", "Drought"]},
+        {"id": "geog-ecosystems", "name": "Paper 1: Ecosystems, biodiversity and management", "subtopics": ["Global ecosystems", "Tropical rainforests", "Deciduous woodlands"]},
+        {"id": "geog-changing-cities", "name": "Paper 2: Changing cities", "subtopics": ["Urbanisation", "UK city case study (e.g. London)", "Emerging/developing country city case study (e.g. Lagos)", "Urban sustainability"]},
+        {"id": "geog-global-development", "name": "Paper 2: Global development", "subtopics": ["Measuring development", "Causes of uneven development", "Reducing the development gap", "Development case study country"]},
+        {"id": "geog-resource-management", "name": "Paper 2: Resource management (energy or water)", "subtopics": ["Global distribution of resources", "Energy resource management", "Water resource management"]},
+        {"id": "geog-fieldwork", "name": "Paper 1 & 2: Geographical investigations (fieldwork)", "subtopics": ["Physical fieldwork (coasts or rivers)", "Human fieldwork (urban or rural)", "Data presentation and analysis"]},
+        {"id": "geog-uk-challenges", "name": "Paper 3: UK challenges", "subtopics": ["Resource consumption and environmental sustainability", "Settlement, population and economic challenges", "Landscape challenges", "Climate change challenges"]},
+        {"id": "geog-skills", "name": "Geographical skills", "subtopics": ["Map skills and OS maps", "Graphs and statistics", "Interpreting photos and sources"]}
+      ]
+    },
+    {
+      "subject": "Computer Science",
+      "qualification": "GCSE",
+      "board": "Edexcel",
+      "spec_code": "1CP2",
+      "spec_url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/computer-science-2020.html",
+      "confidence": "stated",
+      "topics": [
+        {"id": "cs-computational-thinking", "name": "Topic 1: Computational thinking", "subtopics": ["Decomposition and abstraction", "Algorithms: flowcharts and pseudocode", "Searching algorithms (linear, binary)", "Sorting algorithms (bubble, merge)", "Truth tables and logic"]},
+        {"id": "cs-data", "name": "Topic 2: Data", "subtopics": ["Binary and hexadecimal", "Binary arithmetic and shifts", "Two's complement", "Data representation: characters, images, sound", "Data storage units", "Compression (lossy and lossless)"]},
+        {"id": "cs-computers", "name": "Topic 3: Computers", "subtopics": ["Von Neumann architecture and the CPU", "Memory and secondary storage", "Embedded systems", "Operating systems and utility software", "Low-level and high-level languages", "Translators: compilers and interpreters"]},
+        {"id": "cs-networks", "name": "Topic 4: Networks", "subtopics": ["LANs, WANs and the internet", "Network topologies", "Protocols and the TCP/IP model", "Wired vs wireless", "Network security and cyber threats"]},
+        {"id": "cs-issues-impact", "name": "Topic 5: Issues and impact", "subtopics": ["Environmental impact", "Ethical and legal issues", "Privacy and data protection", "Cybersecurity threats and prevention", "Intellectual property"]},
+        {"id": "cs-programming", "name": "Topic 6: Problem solving with programming (Python)", "subtopics": ["Variables, data types and operators", "Selection and iteration", "Lists and string handling", "Subprograms and parameters", "File handling", "Validation and testing", "Reading and correcting code"]}
+      ]
+    },
+    {
+      "subject": "Business",
+      "qualification": "GCSE",
+      "board": "AQA",
+      "spec_code": "8132",
+      "spec_url": "https://www.aqa.org.uk/subjects/business/gcse/business-8132",
+      "confidence": "inferred",
+      "notes": "Board not named in the booklet, but its six units match AQA 8132 exactly.",
+      "topics": [
+        {"id": "bus-real-world", "spec_ref": "3.1", "name": "Business in the real world", "subtopics": ["Purpose of business activity", "Enterprise and entrepreneurship", "Business ownership", "Setting aims and objectives", "Stakeholders", "Business location", "Business planning", "Expanding a business"]},
+        {"id": "bus-influences", "spec_ref": "3.2", "name": "Influences on business", "subtopics": ["Technology", "Ethical and environmental considerations", "The economic climate", "Globalisation", "Legislation", "Competitive environment"]},
+        {"id": "bus-operations", "spec_ref": "3.3", "name": "Business operations", "subtopics": ["Production processes", "Procurement and stock", "Quality", "Customer service"]},
+        {"id": "bus-hr", "spec_ref": "3.4", "name": "Human resources", "subtopics": ["Organisational structures", "Recruitment and selection", "Motivating employees", "Training"]},
+        {"id": "bus-marketing", "spec_ref": "3.5", "name": "Marketing", "subtopics": ["Identifying and understanding customers", "Segmentation", "Market research", "The marketing mix (price, product, promotion, place)"]},
+        {"id": "bus-finance", "spec_ref": "3.6", "name": "Finance", "subtopics": ["Sources of finance", "Revenue, costs and profit", "Break-even", "Cash flow", "Financial terms and calculations", "Analysing financial performance", "Investment appraisal"]}
+      ]
+    },
+    {
+      "subject": "Media Studies",
+      "qualification": "GCSE",
+      "board": "Eduqas",
+      "spec_code": "C680QS",
+      "spec_url": "https://www.eduqas.co.uk/qualifications/media-studies-gcse/",
+      "confidence": "inferred",
+      "notes": "Booklet's 40/30/30 split with TV and music in module two matches Eduqas. Set products change periodically; pull the current set product list from Eduqas.",
+      "topics": [
+        {"id": "media-framework", "name": "Theoretical framework", "subtopics": ["Media language", "Representation", "Audiences", "Media industries", "Contexts (social, cultural, historical, political)"]},
+        {"id": "media-c1", "name": "Component 1: Exploring the Media", "subtopics": ["Print advertising", "Film marketing", "Magazines", "Newspapers", "Radio", "Video games"]},
+        {"id": "media-c2", "name": "Component 2: Understanding Media Forms and Products", "subtopics": ["Television (set product study)", "Music videos and online media (set product study)"]}
+      ]
+    },
+    {
+      "subject": "Music",
+      "qualification": "GCSE",
+      "board": "Eduqas",
+      "spec_code": "C660QS",
+      "spec_url": "https://www.eduqas.co.uk/qualifications/music-gcse/",
+      "confidence": "stated",
+      "topics": [
+        {"id": "music-elements", "name": "Musical elements and theory", "subtopics": ["Melody, harmony, tonality", "Rhythm, metre, tempo", "Texture and dynamics", "Instrumentation and timbre", "Structure", "Notation and keys"]},
+        {"id": "music-aos1", "name": "AoS1: Musical Forms and Devices", "subtopics": ["Binary, ternary, rondo, minuet and trio", "Baroque, classical and romantic periods", "Set work"]},
+        {"id": "music-aos2", "name": "AoS2: Music for Ensemble", "subtopics": ["Chamber music", "Musical theatre", "Jazz and blues", "Textures"]},
+        {"id": "music-aos3", "name": "AoS3: Film Music", "subtopics": ["Leitmotifs", "Creating mood and atmosphere", "Film music techniques"]},
+        {"id": "music-aos4", "name": "AoS4: Popular Music", "subtopics": ["Rock and pop", "Bhangra", "Fusion", "Set work"]}
+      ]
+    },
+    {
+      "subject": "Drama",
+      "qualification": "GCSE",
+      "board": "Edexcel",
+      "spec_code": "1DR0",
+      "spec_url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/drama-2016.html",
+      "confidence": "stated",
+      "notes": "Only Component 3 (written exam) is quizzable. Booklet names An Inspector Calls as the performance text.",
+      "topics": [
+        {"id": "drama-inspector-calls", "name": "Component 3 Section A: An Inspector Calls (performance text)", "subtopics": ["Plot and characters", "Context", "Performance choices: voice, movement, staging", "Design: set, costume, lighting, sound"]},
+        {"id": "drama-live-theatre", "name": "Component 3 Section B: Live theatre evaluation", "subtopics": ["Analysing and evaluating a live performance", "Acting and design vocabulary"]},
+        {"id": "drama-terminology", "name": "Drama terminology", "subtopics": ["Stage types and positions", "Practitioners (e.g. Stanislavski, Brecht, Frantic Assembly)", "Rehearsal techniques"]}
+      ]
+    },
+    {
+      "subject": "Dance",
+      "qualification": "GCSE",
+      "board": "AQA",
+      "spec_code": "8236",
+      "spec_url": "https://www.aqa.org.uk/subjects/dance/gcse/dance-8236",
+      "confidence": "stated",
+      "notes": "Only Component 2 (Dance appreciation, 40%) is quizzable.",
+      "topics": [
+        {"id": "dance-skills", "name": "Performance skills", "subtopics": ["Physical skills", "Technical skills", "Expressive skills", "Mental skills", "Safe working practices"]},
+        {"id": "dance-choreography", "name": "Choreographic processes and devices", "subtopics": ["Researching, improvising, generating, selecting, developing, structuring, refining", "Choreographic devices (motif development, canon, unison etc.)", "Structuring devices"]},
+        {"id": "dance-anthology", "name": "GCSE Dance Anthology (six professional works)", "subtopics": ["A Linha Curva", "Artificial Things", "Emancipation of Expressionism", "Infra", "Shadows", "Within Her Eyes", "Features of production: costume, lighting, set, accompaniment"]}
+      ]
+    },
+    {
+      "subject": "Physical Education",
+      "qualification": "GCSE",
+      "board": "OCR",
+      "spec_code": "J587",
+      "spec_url": "https://www.ocr.org.uk/qualifications/gcse/physical-education-j587-from-2016/",
+      "confidence": "stated",
+      "topics": [
+        {"id": "pe-applied-anatomy", "name": "Paper 1: Applied anatomy and physiology", "subtopics": ["Skeletal system", "Muscular system", "Movement analysis: joints, levers, planes and axes", "Cardiovascular and respiratory systems", "Effects of exercise"]},
+        {"id": "pe-physical-training", "name": "Paper 1: Physical training", "subtopics": ["Components of fitness", "Fitness testing", "Principles of training", "Methods of training", "Injury prevention", "Warm up and cool down"]},
+        {"id": "pe-socio-cultural", "name": "Paper 2: Socio-cultural influences", "subtopics": ["Engagement patterns", "Commercialisation of sport", "Ethical issues: drugs, sportsmanship, gamesmanship"]},
+        {"id": "pe-sports-psychology", "name": "Paper 2: Sports psychology", "subtopics": ["Classification of skills", "Goal setting (SMART)", "Mental preparation", "Guidance and feedback"]},
+        {"id": "pe-health", "name": "Paper 2: Health, fitness and well-being", "subtopics": ["Physical, emotional and social health", "Sedentary lifestyle", "Diet and nutrition"]}
+      ]
+    },
+    {
+      "subject": "Food Preparation and Nutrition",
+      "qualification": "GCSE",
+      "board": "AQA (unconfirmed)",
+      "spec_code": "8585",
+      "spec_url": "https://www.aqa.org.uk/subjects/food/gcse/food-preparation-and-nutrition-8585",
+      "confidence": "inferred",
+      "notes": "Booklet doesn't name the board. The 15% / 35% / 50% split fits AQA 8585 (and Eduqas, which is near-identical). Rest of D&T is AQA, so AQA is the best bet, but check.",
+      "topics": [
+        {"id": "food-nutrition", "name": "Food, nutrition and health", "subtopics": ["Macronutrients", "Micronutrients", "Nutritional needs and health", "Energy requirements", "Diet-related illness"]},
+        {"id": "food-science", "name": "Food science", "subtopics": ["Cooking of food and heat transfer", "Functional and chemical properties of food (gelatinisation, denaturation, aeration etc.)"]},
+        {"id": "food-safety", "name": "Food safety", "subtopics": ["Food spoilage and contamination", "Microorganisms and enzymes", "Principles of food safety (storage, temperatures, cross-contamination)"]},
+        {"id": "food-choice", "name": "Food choice", "subtopics": ["Factors affecting food choice", "British and international cuisines", "Sensory evaluation", "Food labelling"]},
+        {"id": "food-provenance", "name": "Food provenance", "subtopics": ["Environmental impact and sustainability", "Food processing and production", "Food miles and seasonality"]}
+      ]
+    },
+    {
+      "subject": "Design and Technology",
+      "qualification": "GCSE",
+      "board": "AQA",
+      "spec_code": "8552",
+      "spec_url": "https://www.aqa.org.uk/subjects/design-and-technology/gcse/design-and-technology-8552",
+      "confidence": "inferred",
+      "notes": "Covers Graphics, Product Design and Textiles routes (same exam, different specialist material area). Booklet's 'specialist technical principles' wording is AQA's.",
+      "topics": [
+        {"id": "dt-core", "name": "Core technical principles", "subtopics": ["New and emerging technologies", "Energy generation and storage", "Developments in new materials (modern and smart materials, composites, technical textiles)", "Systems approach to designing", "Mechanical devices", "Materials and their working properties"]},
+        {"id": "dt-specialist", "name": "Specialist technical principles", "subtopics": ["Selection of materials or components", "Forces and stresses", "Ecological and social footprint", "Sources and origins", "Using and working with materials", "Stock forms, types and sizes", "Scales of production", "Specialist techniques and processes", "Surface treatments and finishes"]},
+        {"id": "dt-designing", "name": "Designing and making principles", "subtopics": ["Investigation and primary/secondary data", "Environmental, social and economic challenge", "Work of others (designers and companies)", "Design strategies", "Communication of design ideas", "Prototype development", "Selection of materials", "Tolerances", "Material management", "Specialist tools and equipment"]},
+        {"id": "dt-maths-science", "name": "Maths and science in D&T", "subtopics": ["Calculations, ratios and percentages", "Scales and dimensions", "Material properties"]}
+      ]
+    },
+    {
+      "subject": "Creative iMedia",
+      "qualification": "Cambridge National Level 1/2",
+      "board": "OCR",
+      "spec_code": "J834",
+      "spec_url": "https://www.ocr.org.uk/qualifications/cambridge-nationals/creative-imedia-level-1-2-award-certificate-j834/",
+      "confidence": "stated",
+      "notes": "Only R093 (exam, 40%) is quizzable.",
+      "topics": [
+        {"id": "imedia-r093-industry", "name": "R093: The media industry", "subtopics": ["Media sectors and products", "Job roles"]},
+        {"id": "imedia-r093-planning", "name": "R093: Factors influencing product design", "subtopics": ["Client requirements", "Audience segmentation", "Research methods"]},
+        {"id": "imedia-r093-preproduction", "name": "R093: Pre-production planning", "subtopics": ["Work plans", "Mind maps, mood boards, visualisation diagrams, storyboards, scripts", "Legal issues: copyright, privacy, certification, regulation", "Health and safety"]},
+        {"id": "imedia-r093-distribution", "name": "R093: Distribution and file formats", "subtopics": ["Distribution platforms", "Image, audio and video file formats", "Compression and properties"]}
+      ]
+    },
+    {
+      "subject": "Sports Studies",
+      "qualification": "Cambridge National Level 1/2",
+      "board": "OCR",
+      "spec_code": "J829",
+      "spec_url": "https://www.ocr.org.uk/qualifications/cambridge-nationals/sport-studies-level-1-2-j829/",
+      "confidence": "stated",
+      "notes": "Only R184 (exam) is quizzable.",
+      "topics": [
+        {"id": "sports-r184-participation", "name": "R184: Issues affecting participation in sport", "subtopics": ["User groups and barriers", "Solutions to barriers"]},
+        {"id": "sports-r184-values", "name": "R184: Values and etiquette", "subtopics": ["Olympic and Paralympic values", "Sportsmanship and gamesmanship", "Performance-enhancing drugs"]},
+        {"id": "sports-r184-events", "name": "R184: Hosting major sporting events", "subtopics": ["Benefits and drawbacks for host cities/countries"]},
+        {"id": "sports-r184-ngbs", "name": "R184: National governing bodies", "subtopics": ["Role of NGBs", "Promotion, development, funding"]},
+        {"id": "sports-r184-media", "name": "R184: Media in sport", "subtopics": ["Types of media", "Positive and negative effects"]}
+      ]
+    }
+  ]
+}
