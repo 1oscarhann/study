@@ -175,10 +175,364 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/subjects": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List Subjects */
+        get: operations["list_subjects_api_subjects_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/subjects/{subject_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get Subject */
+        get: operations["get_subject_api_subjects__subject_id__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/topics/{topic_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get Topic */
+        get: operations["get_topic_api_topics__topic_id__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/play": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Start Play */
+        post: operations["start_play_api_play_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/play/{session_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get Play */
+        get: operations["get_play_api_play__session_id__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/play/{session_id}/answer": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Answer */
+        post: operations["answer_api_play__session_id__answer_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/play/{session_id}/end": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** End Play */
+        post: operations["end_play_api_play__session_id__end_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/home": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get Home */
+        get: operations["get_home_api_home_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/progress/weak-spots": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get Weak Spots */
+        get: operations["get_weak_spots_api_progress_weak_spots_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/reviews/summary": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get Review Summary */
+        get: operations["get_review_summary_api_reviews_summary_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/exams": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List Exams */
+        get: operations["list_exams_api_exams_get"];
+        put?: never;
+        /** Add Exam */
+        post: operations["add_exam_api_exams_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/exams/{exam_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        /** Delete Exam */
+        delete: operations["delete_exam_api_exams__exam_id__delete"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/admin/subjects/{subject_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        /** Patch Subject */
+        patch: operations["patch_subject_api_admin_subjects__subject_id__patch"];
+        trace?: never;
+    };
+    "/api/admin/topics/import": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Import Topics
+         * @description Upload a topic file in the same format as backend/seed/gcse_topics.json.
+         */
+        post: operations["import_topics_api_admin_topics_import_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/admin/topics/{topic_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        /** Patch Topic */
+        patch: operations["patch_topic_api_admin_topics__topic_id__patch"];
+        trace?: never;
+    };
+    "/api/admin/questions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List Questions */
+        get: operations["list_questions_api_admin_questions_get"];
+        put?: never;
+        /** Add Question */
+        post: operations["add_question_api_admin_questions_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/admin/questions/{question_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        /** Remove Question */
+        delete: operations["remove_question_api_admin_questions__question_id__delete"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        /** AdminQuestion */
+        AdminQuestion: {
+            /** Id */
+            id: number;
+            /** Topic Id */
+            topic_id: number;
+            /** Type */
+            type: string;
+            /** Prompt */
+            prompt: string;
+            /** Content */
+            content: {
+                [key: string]: unknown;
+            };
+            /** Answer */
+            answer: {
+                [key: string]: unknown;
+            };
+            /** Explanation */
+            explanation: string;
+            /** Status */
+            status: string;
+            /** Origin */
+            origin: string;
+            /** Difficulty */
+            difficulty: number;
+            /** Is Core */
+            is_core: boolean;
+            /** Report Count */
+            report_count: number;
+        };
+        /** AdminTopic */
+        AdminTopic: {
+            /** Id */
+            id: number;
+            /** Slug */
+            slug: string;
+            /** Name */
+            name: string;
+            /** Learn More Url */
+            learn_more_url: string | null;
+            /** Is Active */
+            is_active: boolean;
+        };
+        /** AnswerRequest */
+        AnswerRequest: {
+            /** Position */
+            position: number;
+            /** Response */
+            response: {
+                [key: string]: unknown;
+            };
+        };
+        /** AnswerResult */
+        AnswerResult: {
+            feedback: components["schemas"]["Feedback"];
+            progress: components["schemas"]["Progress"];
+            next: components["schemas"]["ServedQuestion"] | null;
+            summary: components["schemas"]["Summary"] | null;
+        };
         /** AuthResponse */
         AuthResponse: {
             user: components["schemas"]["MeResponse"];
@@ -199,6 +553,118 @@ export interface components {
             /** New Password */
             new_password: string;
         };
+        /** Choice */
+        Choice: {
+            /** Id */
+            id: string;
+            /** Text */
+            text: string;
+        };
+        /** DueReviews */
+        DueReviews: {
+            /** Today */
+            today: number;
+            /** This Week */
+            this_week: number;
+        };
+        /** Exam */
+        Exam: {
+            /** Id */
+            id: number;
+            /** Subject Id */
+            subject_id: number;
+            /** Subject Name */
+            subject_name: string;
+            /** Label */
+            label: string | null;
+            /**
+             * Exam Date
+             * Format: date
+             */
+            exam_date: string;
+            /** Days Left */
+            days_left: number;
+        };
+        /** ExamIn */
+        ExamIn: {
+            /** Subject Id */
+            subject_id: number;
+            /**
+             * Exam Date
+             * Format: date
+             */
+            exam_date: string;
+            /** Label */
+            label?: string | null;
+        };
+        /** ExamList */
+        ExamList: {
+            /** Exams */
+            exams: components["schemas"]["Exam"][];
+        };
+        /** Feedback */
+        Feedback: {
+            /** Position */
+            position: number;
+            /** Correct */
+            correct: boolean;
+            /** Partial */
+            partial: string | null;
+            /** Correct Answer */
+            correct_answer: {
+                [key: string]: unknown;
+            };
+            /** Your Response */
+            your_response: {
+                [key: string]: unknown;
+            };
+            /** Explanation */
+            explanation: string;
+            /** Learn More Url */
+            learn_more_url: string | null;
+            review: components["schemas"]["ReviewInfo"] | null;
+        };
+        /** FillBlankDraft */
+        FillBlankDraft: {
+            /** Prompt */
+            prompt: string;
+            /** Explanation */
+            explanation: string;
+            /** Subtopic */
+            subtopic?: string | null;
+            /**
+             * Difficulty
+             * @default 2
+             */
+            difficulty: number;
+            /**
+             * Is Core
+             * @default false
+             */
+            is_core: boolean;
+            /**
+             * Higher Only
+             * @default false
+             */
+            higher_only: boolean;
+            /**
+             * Triple Only
+             * @default false
+             */
+            triple_only: boolean;
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "fill_blank";
+            /** Accepted */
+            accepted: string[];
+            /**
+             * Case Sensitive
+             * @default false
+             */
+            case_sensitive: boolean;
+        };
         /** HTTPValidationError */
         HTTPValidationError: {
             /** Detail */
@@ -211,12 +677,155 @@ export interface components {
             /** Db */
             db: string;
         };
+        /** Home */
+        Home: {
+            user: components["schemas"]["HomeUser"];
+            due_reviews: components["schemas"]["DueReviews"];
+            /** Recent Topics */
+            recent_topics: components["schemas"]["RecentTopic"][];
+            weakest_topic: components["schemas"]["WeakSpot"] | null;
+            /** Exams */
+            exams: components["schemas"]["Exam"][];
+        };
+        /** HomeUser */
+        HomeUser: {
+            /** Username */
+            username: string;
+            /** Year Group */
+            year_group: number | null;
+            /** Graduated */
+            graduated: boolean;
+            /** Total Xp */
+            total_xp: number;
+            /** Streak Current */
+            streak_current: number;
+        };
+        /** ImportFile */
+        ImportFile: {
+            /** Meta */
+            meta?: {
+                [key: string]: unknown;
+            };
+            /** Subjects */
+            subjects: components["schemas"]["ImportSubject"][];
+        };
+        /** ImportSubject */
+        ImportSubject: {
+            /** Subject */
+            subject: string;
+            /** Qualification */
+            qualification: string;
+            /** Board */
+            board: string;
+            /** Spec Code */
+            spec_code?: string | null;
+            /** Spec Url */
+            spec_url?: string | null;
+            /** Spec Url Alt */
+            spec_url_alt?: string | null;
+            /** Confidence */
+            confidence: string;
+            /** Notes */
+            notes?: string | null;
+            /** Excludes Triple Only */
+            excludes_triple_only?: boolean | null;
+            /** Topics */
+            topics: components["schemas"]["ImportTopic"][];
+        };
+        /** ImportTopic */
+        ImportTopic: {
+            /** Id */
+            id: string;
+            /** Name */
+            name: string;
+            /** Spec Ref */
+            spec_ref?: string | null;
+            /** Subtopics */
+            subtopics?: string[];
+        };
         /** LoginRequest */
         LoginRequest: {
             /** Username */
             username: string;
             /** Password */
             password: string;
+        };
+        /** MatchDraft */
+        MatchDraft: {
+            /** Prompt */
+            prompt: string;
+            /** Explanation */
+            explanation: string;
+            /** Subtopic */
+            subtopic?: string | null;
+            /**
+             * Difficulty
+             * @default 2
+             */
+            difficulty: number;
+            /**
+             * Is Core
+             * @default false
+             */
+            is_core: boolean;
+            /**
+             * Higher Only
+             * @default false
+             */
+            higher_only: boolean;
+            /**
+             * Triple Only
+             * @default false
+             */
+            triple_only: boolean;
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "match";
+            /** Pairs */
+            pairs: [
+                string,
+                string
+            ][];
+        };
+        /** McqDraft */
+        McqDraft: {
+            /** Prompt */
+            prompt: string;
+            /** Explanation */
+            explanation: string;
+            /** Subtopic */
+            subtopic?: string | null;
+            /**
+             * Difficulty
+             * @default 2
+             */
+            difficulty: number;
+            /**
+             * Is Core
+             * @default false
+             */
+            is_core: boolean;
+            /**
+             * Higher Only
+             * @default false
+             */
+            higher_only: boolean;
+            /**
+             * Triple Only
+             * @default false
+             */
+            triple_only: boolean;
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "mcq";
+            /** Correct */
+            correct: string;
+            /** Wrong */
+            wrong: string[];
         };
         /** MeResponse */
         MeResponse: {
@@ -245,10 +854,115 @@ export interface components {
              */
             created_at: string;
         };
+        /** MyTopicStats */
+        MyTopicStats: {
+            /** Answered */
+            answered: number;
+            /** Correct */
+            correct: number;
+            /** Accuracy */
+            accuracy: number | null;
+        };
+        /** NewQuestion */
+        NewQuestion: {
+            /** Topic Id */
+            topic_id: number;
+            /** Question */
+            question: components["schemas"]["McqDraft"] | components["schemas"]["FillBlankDraft"] | components["schemas"]["OrderDraft"] | components["schemas"]["MatchDraft"];
+        };
+        /** OrderDraft */
+        OrderDraft: {
+            /** Prompt */
+            prompt: string;
+            /** Explanation */
+            explanation: string;
+            /** Subtopic */
+            subtopic?: string | null;
+            /**
+             * Difficulty
+             * @default 2
+             */
+            difficulty: number;
+            /**
+             * Is Core
+             * @default false
+             */
+            is_core: boolean;
+            /**
+             * Higher Only
+             * @default false
+             */
+            higher_only: boolean;
+            /**
+             * Triple Only
+             * @default false
+             */
+            triple_only: boolean;
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "order";
+            /** Items */
+            items: string[];
+        };
         /** PasswordConfirmRequest */
         PasswordConfirmRequest: {
             /** Password */
             password: string;
+        };
+        /**
+         * PlayMode
+         * @enum {string}
+         */
+        PlayMode: "quiz" | "battle" | "boss" | "review";
+        /** PlayState */
+        PlayState: {
+            /**
+             * Session Id
+             * Format: uuid
+             */
+            session_id: string;
+            mode: components["schemas"]["PlayMode"];
+            status: components["schemas"]["SessionStatus"];
+            topic: components["schemas"]["TopicRef"] | null;
+            /** Subject Id */
+            subject_id: number | null;
+            progress: components["schemas"]["Progress"];
+            question: components["schemas"]["ServedQuestion"] | null;
+            summary: components["schemas"]["Summary"] | null;
+        };
+        /** Progress */
+        Progress: {
+            /** Answered */
+            answered: number;
+            /** Correct */
+            correct: number;
+            /** Total */
+            total: number;
+        };
+        /**
+         * QuestionType
+         * @enum {string}
+         */
+        QuestionType: "mcq" | "fill_blank" | "order" | "match";
+        /** RecentTopic */
+        RecentTopic: {
+            /** Topic Id */
+            topic_id: number;
+            /** Subject Id */
+            subject_id: number | null;
+            /** Name */
+            name: string;
+            /** Subject Name */
+            subject_name: string | null;
+            /** Accuracy */
+            accuracy: number | null;
+            /**
+             * Last Played At
+             * Format: date-time
+             */
+            last_played_at: string;
         };
         /** RecoverRequest */
         RecoverRequest: {
@@ -264,6 +978,57 @@ export interface components {
             /** Recovery Code */
             recovery_code: string;
         };
+        /** ResultRow */
+        ResultRow: {
+            /** Position */
+            position: number;
+            /** Prompt */
+            prompt: string;
+            /** Correct */
+            correct: boolean | null;
+        };
+        /** ReviewInfo */
+        ReviewInfo: {
+            /** Box */
+            box: number;
+            /**
+             * Due On
+             * Format: date
+             */
+            due_on: string;
+            /** Days Until Due */
+            days_until_due: number;
+        };
+        /**
+         * ServedQuestion
+         * @description What the player sees. Never contains the answer.
+         */
+        ServedQuestion: {
+            /** Position */
+            position: number;
+            /** Question Id */
+            question_id: number;
+            type: components["schemas"]["QuestionType"];
+            /** Prompt */
+            prompt: string;
+            /** Subtopic */
+            subtopic: string | null;
+            /** Topic Name */
+            topic_name: string;
+            /** Options */
+            options?: components["schemas"]["Choice"][] | null;
+            /** Items */
+            items?: components["schemas"]["Choice"][] | null;
+            /** Left */
+            left?: components["schemas"]["Choice"][] | null;
+            /** Right */
+            right?: components["schemas"]["Choice"][] | null;
+        };
+        /**
+         * SessionStatus
+         * @enum {string}
+         */
+        SessionStatus: "active" | "finished" | "abandoned";
         /** SignupRequest */
         SignupRequest: {
             /** Username */
@@ -272,6 +1037,170 @@ export interface components {
             password: string;
             /** Year Group */
             year_group: number;
+        };
+        /** StartPlayRequest */
+        StartPlayRequest: {
+            /**
+             * Mode
+             * @enum {string}
+             */
+            mode: "quiz" | "review";
+            /** Topic Id */
+            topic_id?: number | null;
+            /** Subject Id */
+            subject_id?: number | null;
+            /**
+             * Include Higher
+             * @default true
+             */
+            include_higher: boolean;
+        };
+        /** SubjectDetail */
+        SubjectDetail: {
+            /** Id */
+            id: number;
+            /** Slug */
+            slug: string;
+            /** Name */
+            name: string;
+            /** Qualification */
+            qualification: string;
+            /** Exam Board */
+            exam_board: string;
+            /** Spec Code */
+            spec_code: string | null;
+            /** Topics */
+            topics: components["schemas"]["TopicSummary"][];
+        };
+        /** SubjectList */
+        SubjectList: {
+            /** Subjects */
+            subjects: components["schemas"]["SubjectSummary"][];
+        };
+        /** SubjectPatch */
+        SubjectPatch: {
+            /** Is Active */
+            is_active?: boolean | null;
+        };
+        /** SubjectSummary */
+        SubjectSummary: {
+            /** Id */
+            id: number;
+            /** Slug */
+            slug: string;
+            /** Name */
+            name: string;
+            /** Qualification */
+            qualification: string;
+            /** Exam Board */
+            exam_board: string;
+            /** Topic Count */
+            topic_count: number;
+            /**
+             * Playable Topic Count
+             * @description Topics with at least one live question
+             */
+            playable_topic_count: number;
+        };
+        /** Subtopic */
+        Subtopic: {
+            /** Name */
+            name: string;
+            /**
+             * Higher Only
+             * @default false
+             */
+            higher_only: boolean;
+            /**
+             * Triple Only
+             * @default false
+             */
+            triple_only: boolean;
+        };
+        /** Summary */
+        Summary: {
+            mode: components["schemas"]["PlayMode"];
+            status: components["schemas"]["SessionStatus"];
+            topic: components["schemas"]["TopicRef"] | null;
+            /** Subject Id */
+            subject_id: number | null;
+            /** Total */
+            total: number;
+            /** Answered */
+            answered: number;
+            /** Correct */
+            correct: number;
+            /** Accuracy */
+            accuracy: number | null;
+            /** Results */
+            results: components["schemas"]["ResultRow"][];
+            /** Xp Awarded */
+            xp_awarded: number;
+        };
+        /** TopicDetail */
+        TopicDetail: {
+            /** Topic Id */
+            topic_id: number;
+            /** Slug */
+            slug: string;
+            /** Name */
+            name: string;
+            /** Subject Id */
+            subject_id: number | null;
+            /** Subject Name */
+            subject_name: string | null;
+            /** Spec Ref */
+            spec_ref: string | null;
+            /** Subtopics */
+            subtopics: components["schemas"]["Subtopic"][];
+            /** Learn More Url */
+            learn_more_url: string | null;
+            /** Question Count */
+            question_count: number;
+            /** Higher Only Count */
+            higher_only_count: number;
+            /** Due Count */
+            due_count: number;
+            stats: components["schemas"]["MyTopicStats"];
+            /** Last Played At */
+            last_played_at: string | null;
+        };
+        /** TopicPatch */
+        TopicPatch: {
+            /** Name */
+            name?: string | null;
+            /** Learn More Url */
+            learn_more_url?: string | null;
+            /**
+             * Clear Learn More Url
+             * @default false
+             */
+            clear_learn_more_url: boolean;
+            /** Is Active */
+            is_active?: boolean | null;
+        };
+        /** TopicRef */
+        TopicRef: {
+            /** Id */
+            id: number;
+            /** Name */
+            name: string;
+        };
+        /** TopicSummary */
+        TopicSummary: {
+            /** Topic Id */
+            topic_id: number;
+            /** Slug */
+            slug: string;
+            /** Name */
+            name: string;
+            /** Spec Ref */
+            spec_ref: string | null;
+            /** Question Count */
+            question_count: number;
+            stats: components["schemas"]["MyTopicStats"];
+            /** Last Played At */
+            last_played_at: string | null;
         };
         /** UsernameIdeasResponse */
         UsernameIdeasResponse: {
@@ -290,6 +1219,36 @@ export interface components {
             input?: unknown;
             /** Context */
             ctx?: Record<string, never>;
+        };
+        /** WeakSpot */
+        WeakSpot: {
+            /** Topic Id */
+            topic_id: number;
+            /** Subject Id */
+            subject_id: number | null;
+            /** Name */
+            name: string;
+            /** Subject Name */
+            subject_name: string | null;
+            /** Answered */
+            answered: number;
+            /** Correct */
+            correct: number;
+            /** Accuracy */
+            accuracy: number;
+            /** Enough Data */
+            enough_data: boolean;
+            /** Last Played At */
+            last_played_at: string | null;
+        };
+        /** WeakSpots */
+        WeakSpots: {
+            /** Window Days */
+            window_days: number;
+            /** Min Answers */
+            min_answers: number;
+            /** Topics */
+            topics: components["schemas"]["WeakSpot"][];
         };
         /** YearGroupRequest */
         YearGroupRequest: {
@@ -598,6 +1557,562 @@ export interface operations {
                 content: {
                     "application/json": components["schemas"]["RecoveryCodeResponse"];
                 };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    list_subjects_api_subjects_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["SubjectList"];
+                };
+            };
+        };
+    };
+    get_subject_api_subjects__subject_id__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                subject_id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["SubjectDetail"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    get_topic_api_topics__topic_id__get: {
+        parameters: {
+            query?: {
+                subject_id?: number | null;
+            };
+            header?: never;
+            path: {
+                topic_id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["TopicDetail"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    start_play_api_play_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["StartPlayRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PlayState"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    get_play_api_play__session_id__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PlayState"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    answer_api_play__session_id__answer_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["AnswerRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AnswerResult"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    end_play_api_play__session_id__end_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Summary"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    get_home_api_home_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Home"];
+                };
+            };
+        };
+    };
+    get_weak_spots_api_progress_weak_spots_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["WeakSpots"];
+                };
+            };
+        };
+    };
+    get_review_summary_api_reviews_summary_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DueReviews"];
+                };
+            };
+        };
+    };
+    list_exams_api_exams_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ExamList"];
+                };
+            };
+        };
+    };
+    add_exam_api_exams_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ExamIn"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Exam"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    delete_exam_api_exams__exam_id__delete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                exam_id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    patch_subject_api_admin_subjects__subject_id__patch: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                subject_id: number;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["SubjectPatch"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    import_topics_api_admin_topics_import_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ImportFile"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: number;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    patch_topic_api_admin_topics__topic_id__patch: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                topic_id: number;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["TopicPatch"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminTopic"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    list_questions_api_admin_questions_get: {
+        parameters: {
+            query: {
+                topic_id: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminQuestion"][];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    add_question_api_admin_questions_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["NewQuestion"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AdminQuestion"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    remove_question_api_admin_questions__question_id__delete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                question_id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
             };
             /** @description Validation Error */
             422: {

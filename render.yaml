@@ -10,8 +10,9 @@ services:
     # UV_PYTHON_INSTALL_DIR keeps any uv-managed Python inside the project folder, which
     # Render carries from build to runtime (the home directory isn't kept).
     buildCommand: pip install uv && UV_PYTHON_INSTALL_DIR=.uv-python uv sync --frozen --no-dev
-    # Free instances have no pre-deploy step, so migrations run on start.
-    startCommand: .venv/bin/alembic upgrade head && .venv/bin/uvicorn --factory app.main:create_app --host 0.0.0.0 --port $PORT
+    # Free instances have no pre-deploy step, so migrations and the (idempotent) topic +
+    # demo-question seed run on start.
+    startCommand: .venv/bin/alembic upgrade head && .venv/bin/python -m app.cli seed && .venv/bin/uvicorn --factory app.main:create_app --host 0.0.0.0 --port $PORT
     healthCheckPath: /api/health
     envVars:
       - key: ENVIRONMENT

@@ -8,7 +8,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import auth, health, me
+from app.api import admin, auth, health, learn, me
 from app.config import Settings, get_settings
 from app.db import Database
 from app.errors import install_error_handlers
@@ -34,7 +34,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     app = FastAPI(
         title="Revision Battle API",
-        version="0.2.0",
+        version="0.4.0",
         lifespan=lifespan,
         # API docs only outside prod. The OpenAPI schema also feeds the frontend's types.
         docs_url=None if settings.is_prod else f"{API_PREFIX}/docs",
@@ -66,6 +66,6 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             ProxyGuardMiddleware, shared_secret=settings.proxy_shared_secret.get_secret_value()
         )
 
-    for router in (health.router, auth.router, me.router):
+    for router in (health.router, auth.router, me.router, learn.router, admin.router):
         app.include_router(router, prefix=API_PREFIX)
     return app

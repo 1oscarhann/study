@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "description": "French and German topic trees, cloned from the Spanish theme tree as gcse_topics.json asks. The themes are shared across AQA's new MFL specs; the grammar subtopics are drafted per language and need checking against the official AQA 8652 / 8662 grammar lists.",
+    "generated": "2026-11-02"
+  },
+  "subjects": [
+    {
+      "subject": "French",
+      "qualification": "GCSE",
+      "board": "AQA",
+      "spec_code": "8652",
+      "spec_url": "https://www.aqa.org.uk/subjects/languages/gcse/french-8652",
+      "confidence": "stated",
+      "notes": "Topics cloned from Spanish; grammar list drafted for French. Check against the AQA 8652 grammar requirements.",
+      "topics": [
+        {"id": "fr-identity-culture", "name": "Theme 1: People and lifestyle / Identity and culture", "subtopics": ["Identity and relationships with others", "Healthy living and lifestyle", "Education and work", "Free-time activities", "Customs, festivals and celebrations", "Celebrity culture"]},
+        {"id": "fr-local-global", "name": "Theme 2: Popular culture / Local, national, international and global areas of interest", "subtopics": ["Travel and tourism, incl. places of interest", "Media and technology", "The environment and where people live"]},
+        {"id": "fr-study-employment", "name": "Theme 3: Communication and the world around us / Current and future study and employment", "subtopics": ["School and studies", "Future plans and careers", "Jobs and work"]},
+        {"id": "fr-grammar", "name": "Grammar", "subtopics": ["Present tense (regular, irregular and reflexive verbs)", "Passé composé with avoir and être", "Imparfait", "Near future (aller + infinitive) and future tense", "Conditional", "Pluperfect (higher)", "Subjunctive (higher)", "Negatives (ne…pas, ne…jamais, ne…rien)", "Object pronouns", "Adjective agreement and position"]},
+        {"id": "fr-vocab", "name": "Defined vocabulary list", "subtopics": ["Foundation vocab", "Higher vocab"]}
+      ]
+    },
+    {
+      "subject": "German",
+      "qualification": "GCSE",
+      "board": "AQA",
+      "spec_code": "8662",
+      "spec_url": "https://www.aqa.org.uk/subjects/languages/gcse/german-8662",
+      "confidence": "stated",
+      "notes": "Topics cloned from Spanish; grammar list drafted for German. Check against the AQA 8662 grammar requirements.",
+      "topics": [
+        {"id": "de-identity-culture", "name": "Theme 1: People and lifestyle / Identity and culture", "subtopics": ["Identity and relationships with others", "Healthy living and lifestyle", "Education and work", "Free-time activities", "Customs, festivals and celebrations", "Celebrity culture"]},
+        {"id": "de-local-global", "name": "Theme 2: Popular culture / Local, national, international and global areas of interest", "subtopics": ["Travel and tourism, incl. places of interest", "Media and technology", "The environment and where people live"]},
+        {"id": "de-study-employment", "name": "Theme 3: Communication and the world around us / Current and future study and employment", "subtopics": ["School and studies", "Future plans and careers", "Jobs and work"]},
+        {"id": "de-grammar", "name": "Grammar", "subtopics": ["Present tense (regular, irregular and modal verbs)", "Perfect tense with haben and sein", "Imperfect (simple past) of common verbs", "Future tense (werden + infinitive)", "Conditional (würde + infinitive)", "Pluperfect (higher)", "Cases: nominative, accusative, dative, genitive", "Word order (verb second, time-manner-place, subordinate clauses)", "Separable verbs", "Adjective endings"]},
+        {"id": "de-vocab", "name": "Defined vocabulary list", "subtopics": ["Foundation vocab", "Higher vocab"]}
+      ]
+    }
+  ]
+}

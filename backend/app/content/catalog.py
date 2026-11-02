@@ -103,6 +103,28 @@ class CatalogError(ValueError):
     pass
 
 
+def merge_files(files: list[ImportFile]) -> ImportFile:
+    """Combine several topic files. A subject that appears in more than one file (same
+    name, qualification and board) gets its topic lists joined; the first file's details win.
+    """
+    merged: dict[tuple[str, str, str], ImportSubject] = {}
+    for f in files:
+        for subject in f.subjects:
+            key = (subject.subject, subject.qualification, subject.board)
+            if key not in merged:
+                merged[key] = subject.model_copy(deep=True)
+                continue
+            existing = merged[key]
+            notes = [n for n in (existing.notes, subject.notes) if n]
+            merged[key] = existing.model_copy(
+                update={
+                    "topics": [*existing.topics, *subject.topics],
+                    "notes": " ".join(notes) or None,
+                }
+            )
+    return ImportFile(subjects=list(merged.values()))
+
+
 def parse_subtopic(raw: str) -> Subtopic:
     name = raw.strip()
     higher = triple = False

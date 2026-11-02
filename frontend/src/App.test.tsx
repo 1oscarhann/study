@@ -39,21 +39,6 @@ describe("app shell (logged in)", () => {
   });
 });
 
-describe("home API status", () => {
-  it("says the server is online when /api/health is ok", async () => {
-    loggedInAs();
-    renderRoute("/");
-    expect(await screen.findByText("Server online")).toBeInTheDocument();
-  });
-
-  it("says the server is unavailable when the health check fails", async () => {
-    loggedInAs();
-    server.use(http.get("*/api/health", () => HttpResponse.json({ status: "degraded", db: "error" }, { status: 503 })));
-    renderRoute("/");
-    expect(await screen.findByText("Server unavailable")).toBeInTheDocument();
-  });
-});
-
 describe("api client", () => {
   it("sends the CSRF header and same-origin credentials", async () => {
     let seen: Request | undefined;

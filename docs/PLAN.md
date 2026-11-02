@@ -1,6 +1,6 @@
 # Revision Battle: Build Plan
 
-**Status:** approved 2 Nov 2026 · Phases 1–2 done (deploy pending your Neon/Cloudflare accounts)
+**Status:** approved 2 Nov 2026 · Phases 1–4 done (deploy pending your Neon/Cloudflare accounts)
 
 **Decisions locked in:** Cloudflare Workers static assets (not Pages) · recovery codes · report threshold N = 3 · free `workers.dev` address for now · topic tree from the school's GCSE file (`backend/seed/gcse_topics.json`).
 
@@ -517,7 +517,7 @@ Each phase ends with a stop, a summary, and run/test steps.
 - Tests: auth, year group (including September rollover edge cases), rate limits.
 - **First deploy smoke test** on Render + Neon + Cloudflare.
 
-**Phase 3: content + quick quiz**
+**Phase 3: content + quick quiz** ✅ done
 - Subjects, topics and questions.
 - Seed script: 3 topics, around 60 hand-checked questions covering all 4 types.
 - Admin topic CRUD + bulk import, and the CLI to create the admin account.
@@ -525,7 +525,7 @@ Each phase ends with a stop, a summary, and run/test steps.
 - Quiz runner UI for all 4 types, with explanations and learn-more links.
 - Tests: answer checking, and that answers never leak before you answer.
 
-**Phase 4: spaced repetition + home**
+**Phase 4: spaced repetition + home** ✅ done
 - Leitner scheduling and review mode.
 - Weak spots page.
 - Home screen: quick launch, due count, exam countdowns (XP and avatar are placeholders until Phase 6).
@@ -620,9 +620,24 @@ That's everything.
 
 ---
 
-## 10. Follow-ups from the topic file (handled in Phase 3)
+## 10. Follow-ups from the topic file
 
-- **French and German** have no topics yet; the file says to clone the Spanish tree. The Phase 3 importer will clone it with French/German grammar subtopics, flagged for you to check.
+- ✅ **French and German** now have the Spanish theme tree, with drafted French/German grammar subtopics in `backend/seed/mfl_topics.json`. Check the grammar lists against AQA 8652/8662.
 - **English Literature:** confirm which Shakespeare play and poetry cluster your cohort studies, then trim the unused texts.
 - **Boards marked `inferred`** (RS, Business, Media, Food, D&T): check against the specs. They're stored with `board_confidence = inferred` so the admin screen can flag them.
 - **Spec refs** were written from knowledge of each spec, not copied, so check them before relying on them.
+
+---
+
+## 11. Decisions made while building Phases 3–4
+
+- **Question selection:** due reviews first, then unseen, then shaky (box 1–2), then the rest; the final 10 are shuffled.
+- **Leitner details:**
+  - Right-first-time starts in box 4 (one check-in after 14 days), so easy questions don't flood the review queue.
+  - Right-but-not-yet-due doesn't promote a question.
+  - Review sessions are capped at 20 questions.
+- **Fill-the-blank numbers:** "0.5" = ".5" and "1,000" = "1000". "1,2" is never read as 12, because it might be a decimal comma.
+- **Learn-more links:** Wikipedia for the three demo topics. BBC Bitesize blocks automated access, so its URLs couldn't be verified. Admins can change any topic's link.
+- **Foundation/Higher:** a per-subject toggle stored on the device (localStorage), not on the server. It's a preference, not personal data.
+- **Admin:** API + CLI for now. The admin screens arrive with the reports queue in Phase 7.
+- **XP/streak on home:** shown, but they stay at 0 until Phase 6 wires them up.

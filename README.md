@@ -4,7 +4,7 @@ A gamified GCSE / A-level revision web app. Students revise with quick quizzes a
 
 The full design (schema, API routes, phases, privacy rules) is in [`docs/PLAN.md`](docs/PLAN.md).
 
-**Status:** Phase 2 (accounts) is done. Students can sign up, log in, recover their account with a recovery code, fix their year group once per school year, and delete their account. Revision features land from Phase 3.
+**Status:** Phases 1–4 are done. Students can make an account, browse 24 GCSE subjects, play 10-question quick quizzes (multiple choice, fill-the-blank, put-in-order, match-up) with an explanation after every answer, get wrong answers back on a 1 → 3 → 7 → 14-day spaced-repetition schedule, see their weak spots, and track exam countdowns. Battles, XP/avatars/leagues and the AI set creator are next (Phases 5–7).
 
 ## Stack
 
@@ -54,6 +54,12 @@ uv sync
 ```bash
 uv run alembic upgrade head
 ```
+
+```bash
+uv run python -m app.cli seed
+```
+
+That loads all the subjects and topics plus 75 hand-checked demo questions. It's safe to re-run.
 
 ```bash
 uv run uvicorn --factory app.main:create_app --reload --port 8000
@@ -143,6 +149,38 @@ Step-by-step guide: [`docs/DEPLOY.md`](docs/DEPLOY.md). It covers Neon, then Ren
 - **Usernames:** filtered for profanity (including leetspeak) and for staff-impersonating names like `admin` or `teacher`. The word lists are in `backend/app/security/data/`.
 - **Year groups:** stored as a cohort, so everyone moves up at 00:00 UK time on 1 September. Students can correct theirs once per school year.
 
-## Topic data
+## Content
 
-`backend/seed/gcse_topics.json` holds the school's GCSE subject/topic tree. Spec references and some exam boards are marked as needing a check against the official specs (see its `meta` and `notes` fields). Combined Science reuses the separate sciences' topics, so one question bank serves both; triple-only and higher-tier subtopics are tagged automatically on import.
+**Topics.** `backend/seed/gcse_topics.json` is the school's GCSE subject/topic tree. `backend/seed/mfl_topics.json` adds French and German, cloned from Spanish as the file asked.
+- Spec references, some exam boards and the French/German grammar lists are flagged in the files as needing a check against the official specs.
+- Combined Science reuses the separate sciences' topics, so one question bank serves both.
+- Questions tagged triple-only are hidden when playing through Combined Science.
+- A Foundation/Higher toggle on each topic hides higher-only questions.
+
+**Demo questions.** `backend/seed/questions/` holds 75 hand-checked questions: 25 each for Cell biology (AQA), Atomic structure (AQA) and Weimar & Nazi Germany (Edexcel). They cover all four question types.
+- Every question passes the same automatic checks AI questions will face in Phase 7: unique options, exactly one blank, no "all of the above", and so on.
+- Each topic's "learn more" link currently points to Wikipedia. BBC Bitesize blocks automated access, so swap in your preferred pages with the admin API.
+
+**Admin.** Sign up in the app as normal, then promote yourself:
+
+```bash
+cd backend && uv run python -m app.cli make-admin YOUR_USERNAME
+```
+
+On Render's free plan there's no server shell. Run that command from your own computer with `DATABASE_URL` set to the Neon connection string.
+
+Admins can use these endpoints (an admin screen comes with the reports queue in Phase 7):
+- `POST /api/admin/topics/import`: same format as the seed files
+- `PATCH /api/admin/topics/{id}`: rename, hide, or set the learn-more link
+- `GET`/`POST`/`DELETE /api/admin/questions`: official questions. Answered questions are archived, never deleted, so stats stay right.
+
+## How revision works (Phases 3–4)
+
+- **Quick quiz:** 10 questions from a topic. The picker goes in this order: questions due for review first, then ones you haven't seen, then ones you recently got wrong, then everything else.
+- **Marking:** fill-the-blank answers must match exactly once case, spacing and punctuation are ignored. There's no typo-tolerance on purpose ("meiosis" ≠ "mitosis"). Answers are never sent to the phone before you answer.
+- **Spaced repetition (Leitner boxes):**
+  - A wrong answer comes back after 1 day.
+  - Getting it right on each review pushes it out to 3, then 7, then 14, then 30 days.
+  - Something you get right the first time gets a single check-in after 2 weeks.
+  - Getting a question right before it's due doesn't fast-track it.
+- **Weak spots:** your accuracy per topic over the last 60 days, worst first. A topic needs at least 5 answers to be ranked.

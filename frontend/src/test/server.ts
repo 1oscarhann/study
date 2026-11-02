@@ -2,6 +2,7 @@ import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 
 import type { Me } from "../api/types";
+import { EMPTY_HOME } from "./fixtures";
 
 export const ME: Me = {
   username: "SwiftOtter42",
@@ -23,8 +24,14 @@ export function apiError(status: number, detail: string, field: string | null = 
 export const server = setupServer(
   http.get("*/api/me", () => apiError(401, "Please log in.", null, "not_authenticated")),
   http.get("*/api/health", () => HttpResponse.json({ status: "ok", db: "ok" })),
+  http.get("*/api/home", () => HttpResponse.json(EMPTY_HOME)),
 );
 
 export function loggedInAs(me: Partial<Me> = {}) {
-  server.use(http.get("*/api/me", () => HttpResponse.json({ ...ME, ...me })));
+  server.use(
+    http.get("*/api/me", () => HttpResponse.json({ ...ME, ...me })),
+    http.get("*/api/home", () =>
+      HttpResponse.json({ ...EMPTY_HOME, user: { ...EMPTY_HOME.user, username: me.username ?? ME.username } }),
+    ),
+  );
 }

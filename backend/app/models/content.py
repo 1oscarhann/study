@@ -154,6 +154,15 @@ class Question(Base):
         sa.CheckConstraint("difficulty BETWEEN 1 AND 3", name="difficulty_range"),
         sa.CheckConstraint("NOT (is_core AND set_id IS NOT NULL)", name="core_is_official_only"),
         sa.CheckConstraint("report_count >= 0", name="report_count_non_negative"),
+        sa.CheckConstraint("char_length(prompt) BETWEEN 5 AND 500", name="prompt_len"),
+        # No duplicate official questions in a topic (also makes seeding idempotent).
+        sa.Index(
+            "uq_questions_official_prompt",
+            "topic_id",
+            "prompt",
+            unique=True,
+            postgresql_where=sa.text("set_id IS NULL"),
+        ),
         sa.Index(
             "ix_questions_official_topic_status",
             "topic_id",

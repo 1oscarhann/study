@@ -30,6 +30,9 @@ class PlaySession(Base):
         sa.ForeignKey("question_sets.id", ondelete="SET NULL")
     )
     include_higher: Mapped[bool] = mapped_column(sa.Boolean, server_default=sa.true())
+    # The questions picked for this session, in order. Rows in session_answers are created
+    # one at a time as each question is served.
+    question_ids: Mapped[list[int]] = mapped_column(JSONB, server_default=sa.text("'[]'::jsonb"))
     status: Mapped[SessionStatus] = mapped_column(
         text_enum(SessionStatus, "session_status"), server_default=SessionStatus.ACTIVE
     )
@@ -112,6 +115,10 @@ class TopicProgress(Base):
         sa.ForeignKey("topics.id", ondelete="CASCADE"), primary_key=True
     )
     last_played_at: Mapped[datetime | None] = mapped_column(sa.DateTime(timezone=True))
+    # Which subject they last played this topic through (Combined vs triple science).
+    last_subject_id: Mapped[int | None] = mapped_column(
+        sa.ForeignKey("subjects.id", ondelete="SET NULL")
+    )
     boss_unlocked_at: Mapped[datetime | None] = mapped_column(sa.DateTime(timezone=True))
     boss_defeated_at: Mapped[datetime | None] = mapped_column(sa.DateTime(timezone=True))
 

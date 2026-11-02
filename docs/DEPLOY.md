@@ -38,7 +38,7 @@ You can do this yourself (option A), or ask Claude to create the service through
 
 `SECRET_KEY` is generated automatically.
 
-3. Wait for the deploy. On boot it runs the database migrations, then starts the API.
+3. Wait for the deploy. On boot it runs the database migrations, loads the topic list and demo questions (safe to repeat), then starts the API.
 4. Note the service URL (e.g. `https://revision-battle-api.onrender.com`) and open `/api/health` on it. You should see `{"status":"ok","db":"ok"}`.
 
 **Option B: Claude creates it**
